@@ -1,10 +1,11 @@
-FROM openresty/openresty:1.21.4.1-0-bullseye-fat
+FROM openresty/openresty:1.21.4.3-1-bookworm-fat
 
 RUN DEBIAN_FRONTEND=noninteractive && \
         apt-get update && \
-        apt-get install -y unzip && \
+        apt-get install -y unzip cmake && \
         apt-get -y clean && \
-        rm -rf /var/lib/apt/lists/*
+        rm -rf /var/lib/apt/lists/* && \
+        opm get bungle/lua-resty-session
 
 # lua debugging
 # Download and unzip the EmmyLuaDebugger release
