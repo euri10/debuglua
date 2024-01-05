@@ -2,8 +2,10 @@ version: "3.8"
 services:
   debug_nginx:
     build:
-        context: .
-        dockerfile: Dockerfile
+      context: .
+      dockerfile: Dockerfile
     ports:
       - "80:80"
       - "9966:9966"
+    environment:
+      - DEBUG_SOURCES_DIR=/usr/share/nginx/html
