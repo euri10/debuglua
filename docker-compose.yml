@@ -6,14 +6,10 @@ services:
     ports:
       - "9999:80"
       - "9966:9966"
-#    extra_hosts:
-#      - "host.docker.internal:host-gateway"
     environment:
       - DEBUG_SOURCES_DIR=./rootfs/etc/nginx
     develop:
       watch:
         - action: sync+restart
-          path: ./rootfs/etc/nginx/lua
-          target: /etc/nginx/lua
-#    volumes:
-#      - ./rootfs/etc/nginx:/etc/nginx
+          path: ./rootfs/etc/nginx
+          target: /etc/nginx
