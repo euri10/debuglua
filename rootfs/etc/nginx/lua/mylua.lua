@@ -1,8 +1,5 @@
---snip
-
-print("Debugger starting")
 --Fix debugger paths
---local debug_sources_dir = os.getenv('DEBUG_SOURCES_DIR')
+local env_sources_dir = os.getenv('DEBUG_SOURCES_DIR')
 local debug_sources_dir = "./rootfs/etc/nginx"
 _G.emmy = {}
 _G.emmy.fixPath = function(path)
