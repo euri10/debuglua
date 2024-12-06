@@ -13,7 +13,7 @@ end
 -- Load debugger
 package.cpath = package.cpath .. ';/usr/local/emmy/?.so'
 local dbg = require('emmy_core')
- dbg.tcpListen('localhost', 9966)
+ dbg.tcpListen('0.0.0.0', 9966)
 --Wait for IDE connection
 dbg.waitIDE()
 print("Debugger started")
